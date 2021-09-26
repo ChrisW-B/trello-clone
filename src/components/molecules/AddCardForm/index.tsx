@@ -35,6 +35,7 @@ const AddCardForm = ({ type, onClose }: OwnProps): ReactElement<OwnProps> => {
   return (
     <form onSubmit={handleNewCardSubmit}>
       <textarea
+        autoFocus
         className='addCard-input'
         onChange={handleUpdateNewCardTitle}
         required

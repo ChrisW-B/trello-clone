@@ -1,10 +1,8 @@
 .app {
-  background-color: hsl(var(--background-base-hue), 48%, 52%);
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(4, minmax(250px, 400px));
-  min-height: calc(-webkit-fill-available - 1.6rem);
-  min-height: calc(100vh - 1.6rem);
   overflow-x: auto;
   padding: 0.8rem;
+  flex: 1;
 }
