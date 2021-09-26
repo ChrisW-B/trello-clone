@@ -1,0 +1,32 @@
+.addCard-input {
+  background-color: hsl(var(--column-base-hue), var(--column-base-saturation), 99%);
+  border-radius: 0.2rem;
+  border: 0;
+  box-shadow: 1px 1.5px 1.4px hsl(var(--column-base-hue) var(--column-base-saturation) 60% / 0.47);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  resize: vertical;
+  width: calc(100% - 0.7rem);
+  margin-bottom: 0.4rem;
+  padding: 0.4rem;
+}
+
+.addCard-confirm {
+  background-color: hsl(100, 43%, 46%);
+  border-radius: 0.2rem;
+  border: 0;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 0 0.5rem 0 0;
+  padding: 0.4rem 0.6rem;
+}
+
+.addCard-cancel {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 0 0.6rem;
+  font-size: 1.8rem;
+  line-height: 2rem;
+}

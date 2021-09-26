@@ -10,10 +10,10 @@ const App: React.FC = () => {
   return (
     <CardProvider>
       <div className='app'>
-        <Column type={ColumnType.ToDo} />
-        <Column type={ColumnType.InProgress} />
-        <Column type={ColumnType.QA} />
-        <Column type={ColumnType.Done} />
+        <Column columnType={ColumnType.ToDo} />
+        <Column columnType={ColumnType.InProgress} />
+        <Column columnType={ColumnType.QA} />
+        <Column columnType={ColumnType.Done} />
       </div>
     </CardProvider>
   );

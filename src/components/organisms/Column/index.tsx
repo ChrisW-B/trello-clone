@@ -3,12 +3,13 @@ import './Column.css';
 import { ReactElement } from 'react';
 import React from 'react';
 
-import { useAddCard, useColumnCards, useMoveCard } from '../../../contexts/cardContext';
+import { useColumnCards, useMoveCard } from '../../../contexts/cardContext';
 import { ColumnType } from '../../../datamodel';
+import AddCardForm from '../../molecules/AddCardForm';
 import Card from '../../molecules/Card';
 
 type OwnProps = {
-  type: ColumnType;
+  columnType: ColumnType;
 };
 
 const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
@@ -27,13 +28,12 @@ const handleDragExit = (e: React.DragEvent<HTMLDivElement>) => {
   e.currentTarget.classList.remove('drag-over');
 };
 
-const Column = ({ type }: OwnProps): ReactElement<OwnProps> => {
+const Column = ({ columnType }: OwnProps): ReactElement<OwnProps> => {
   const [showAddCard, setShowAddCard] = React.useState(false);
-  const [newCardTitle, setNewCardTitle] = React.useState('');
 
-  const cards = useColumnCards(type);
-  const addCard = useAddCard(type);
-  const moveCard = useMoveCard(type);
+  const cards = useColumnCards(columnType);
+
+  const moveCard = useMoveCard(columnType);
 
   const handleDrop = (e: React.DragEvent<HTMLDivElement>, i?: number) => {
     e.preventDefault();
@@ -45,25 +45,9 @@ const Column = ({ type }: OwnProps): ReactElement<OwnProps> => {
     e.stopPropagation();
   };
 
-  const handleNewCardSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    addCard(newCardTitle);
-    setNewCardTitle('');
-    setShowAddCard(false);
-  };
-
-  const handleUpdateNewCardTitle = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setNewCardTitle(e.target.value ?? '');
-  };
-
-  const handleCancelCardCreate = () => {
-    setNewCardTitle('');
-    setShowAddCard(false);
-  };
-
   return (
     <div className='column'>
-      <h2 className='column-title'>{type}</h2>
+      <h2 className='column-title'>{columnType}</h2>
       <div
         onDrop={handleDrop}
         onDragOver={handleDragOver}
@@ -82,18 +66,12 @@ const Column = ({ type }: OwnProps): ReactElement<OwnProps> => {
           />
         ))}
         {showAddCard ? (
-          <form onSubmit={handleNewCardSubmit}>
-            <textarea onChange={handleUpdateNewCardTitle} required rows={3}></textarea>
-            <button type='submit'>Add Card</button>
-            <button type='button' onClick={handleCancelCardCreate}>
-              X
-            </button>
-          </form>
+          <AddCardForm type={columnType} onClose={() => setShowAddCard(false)} />
         ) : null}
       </div>
 
       {!showAddCard ? (
-        <button type='button' onClick={() => setShowAddCard(true)}>
+        <button className='column-addCard' type='button' onClick={() => setShowAddCard(true)}>
           + Add Another Card
         </button>
       ) : null}

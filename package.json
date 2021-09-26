@@ -1,25 +1,16 @@
 {
-  "name": "TheSkimm-Trello",
+  "name": "theskimm-trello",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
-    "uuid": "^8.3.2"
-  },
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint:js": "eslint . --color --ext .js,.jsx,.ts,.tsx --cache --cache-location 'node_modules/.cache/.eslintcache/'",
     "lint:js:fix": "npm run lint:js -- --fix",
     "prettier": "prettier --list-different \"./**/*.{json,{j,t}s{x,}}\" --write",
-    "prettier:check": "prettier \"./**/*.{json,{j,t}s{x,}}\" -c"
+    "prettier:check": "prettier \"./**/*.{json,{j,t}s{x,}}\" -c",
+    "start": "react-scripts start",
+    "test": "react-scripts test"
   },
   "browserslist": {
     "production": [
@@ -33,7 +24,17 @@
       "last 1 safari version"
     ]
   },
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "uuid": "^8.3.2"
+  },
   "devDependencies": {
+    "@testing-library/dom": "^8.6.0",
+    "@testing-library/user-event": "^13.2.1",
     "@types/jest": "^26.0.24",
     "@types/node": "^12.20.27",
     "@types/react": "^17.0.24",
