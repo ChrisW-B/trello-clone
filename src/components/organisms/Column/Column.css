@@ -1,0 +1,24 @@
+.column {
+  background-color: hsl(var(--column-base-hue), var(--column-base-saturation), 92%);
+  border-radius: 0.4rem;
+  flex: 1;
+  padding: 0.6rem;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.column-title {
+  color: hsl(var(--column-base-hue), var(--column-base-saturation), 30%);
+  font-size: 1rem;
+  margin: 0 0 1rem;
+}
+
+.column-card-list {
+  flex: 1;
+  border-radius: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.column-card-list.drag-over {
+  outline: 2px solid hsl(var(--column-base-hue), var(--column-base-saturation), 45%);
+}

@@ -1,0 +1,17 @@
+.card {
+  background-color: hsl(var(--column-base-hue), var(--column-base-saturation), 99%);
+  border-radius: 0.2rem;
+  box-shadow: 1px 1.5px 1.4px hsl(var(--column-base-hue) var(--column-base-saturation) 60% / 0.47);
+  cursor: grab;
+  padding: 0.3rem 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.card.drag-over {
+  outline: 1px solid hsl(var(--column-base-hue), var(--column-base-saturation), 45%);
+}
+
+.card-title {
+  margin: 0;
+  padding: 0;
+}
